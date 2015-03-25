@@ -1,10 +1,13 @@
 # RioTable  #
 
-RioTable (Riot+Table) Is a flexible component to generate tables with [riot.js  lib](https://github.com/muut/riotjs) from a JSON source
+RioTable (Riot+Table) Is a flexible HTML component to generate tables with [riot.js  lib](https://github.com/muut/riotjs) from a JSON source
 
 > (sources and samples very soon) !!!
 
 ![](img/rtable2.png)
+
+
+You can use this HTML in your common  html files
 
 ### The simplest sample ###
 
