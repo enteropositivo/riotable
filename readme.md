@@ -39,7 +39,7 @@ We can specify wich columns from JSON data to render
 Setting an id or a CSS class (for example to render table as BootStrap table),  and the width of any column is so simple:
 
 ```html
-    <rtable ongetdata="getJSON" id="myrtable" class="table">
+    <rtable ongetdata="getJSON" **id="myrtable" class="table"**>
       <rcol name="id" width="20px"/>
       <rcol name="city"/>
     </rtable>   
