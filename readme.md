@@ -25,21 +25,21 @@ This is a simple definition of one table that renders **all**  JSON data returne
 
 ### The columns ###
 
-We can specify wich columns from JSON data to render 
+We can specify which columns to render from JSON data  
 
 ```html
     <rtable ongetdata="getJSON">
       <rcol name="id"/>
       <rcol name="city"/>
     </rtable>   
-```    
+```     
 
 ### Some basic options ###
 
 Setting an id or a CSS class (for example to render table as BootStrap table),  and the width of any column is so simple:
 
 ```html
-    <rtable ongetdata="getJSON" **id="myrtable" class="table"**>
+    <rtable ongetdata="getJSON" id="myrtable" class="table">
       <rcol name="id" width="20px"/>
       <rcol name="city"/>
     </rtable>   
@@ -53,7 +53,7 @@ As easy as:
 
 ```html
     <rtable ongetdata="getJSON" id="myrtable" class="table">
-      <rcol name="id" width="20px"> </b>{id}</b> </rcol>
+      <rcol name="id" width="20px">  <b>{id}</b> </rcol>
       <rcol name="city"/> <a href="details/?city={id}">{city}</a> </rcol>
 	  <rcol name="flag"/> <img src="img/{flag}" /> </rcol>
     </rtable>   
