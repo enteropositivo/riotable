@@ -14,15 +14,13 @@ Is a flexible component to generate tables with [riot.js  lib](https://github.co
 This is a simple definition of one table with 2 columns, that will be rendered on mount from the JSON data returned by the callback function getJSON
 
     
-    function mifunc(){
-    
-       return  [
-    		{id:101, city:'New York'},
-    		{id:202, city:'Berlin'},
-    		{id:205, city:'Madrid'}
-    		]
-    
-     }
+    function getJSON(){
+      return [
+    		 {id:101, city:'New York'},
+    		 {id:202, city:'Berlin'},
+    		 {id:205, city:'Madrid'}
+    		 ]
+    }
     
     
     
