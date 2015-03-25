@@ -4,12 +4,16 @@ RioTable (Riot+Table) Is a flexible component to generate tables with [riot.js  
 
 > (sources and samples very soon) !!!
 
+![](img/rtable2.png)
+
 ### The simplest sample ###
 
 ```html
     <rtable ongetdata="getJSON">
     </rtable>
 ```
+
+
 
 This is a simple definition of one table that renders **all**  JSON data returned by the callback function getJSON.  Of course we can retrieve JSON data from an AJAX method
 
@@ -23,6 +27,10 @@ This is a simple definition of one table that renders **all**  JSON data returne
     }
 ```
 
+**Result:**
+
+![](img/rtable1.png)
+
 ### The columns ###
 
 We can specify which columns to render from JSON data  
@@ -33,6 +41,10 @@ We can specify which columns to render from JSON data
       <rcol name="city"/>
     </rtable>   
 ```     
+
+**Result:**
+
+![](img/rtable3.png)
 
 ### Some basic options ###
 
@@ -58,6 +70,10 @@ As easy as:
 	  <rcol name="flag"/> <img src="img/{flag}" /> </rcol>
     </rtable>   
 ```
+
+**Result:**
+
+![](img/rtable2.png)
  
 ### Calling RioTable Methods ###
 
