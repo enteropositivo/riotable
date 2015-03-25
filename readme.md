@@ -11,7 +11,7 @@ RioTable (Riot+Table) Is a flexible component to generate tables with [riot.js  
     </rtable>
 ```
 
-This is a simple definition of one table that renders **all**  JSON data returned by the callback function getJSON
+This is a simple definition of one table that renders **all**  JSON data returned by the callback function getJSON.  Of course we can retrieve JSON data from an AJAX method
 
 ```javascript    
     function getJSON(){
@@ -59,7 +59,19 @@ As easy as:
     </rtable>   
 ```
  
+### Calling RioTable Methods ###
 
+For example we can add new data to our table when a button is clicked. 
+
+```html
+    <button onclick="addNewData()">Change </button>
+    
+	<script>
+		var mytable = document.getElementById('myrtable');
+
+		mytable.Load( [{id:255, city:'Paris', flag:'pa.png'}] );
+	</script>
+```
 
 
     
