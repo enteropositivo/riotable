@@ -56,7 +56,6 @@ As easy as:
       <rcol name="id" width="20px"> </b>{id}</b> </rcol>
       <rcol name="city"/> <a href="details/?city={id}">{city}</a> </rcol>
 	  <rcol name="flag"/> <img src="img/{flag}" /> </rcol>
-
     </rtable>   
 ```
  
