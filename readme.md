@@ -64,12 +64,13 @@ As easy as:
 For example we can add new data to our table when a button is clicked. 
 
 ```html
-    <button onclick="addNewData()">Change </button>
+    <button onclick="addNewData()">Change Table</button>
     
 	<script>
-		var mytable = document.getElementById('myrtable');
-
-		mytable.Load( [{id:255, city:'Paris', flag:'pa.png'}] );
+		function addNewData(){
+			var mytable = document.getElementById('myrtable');
+			mytable.Load( [{id:255, city:'Paris', flag:'pa.png'}] );
+		}
 	</script>
 ```
 
