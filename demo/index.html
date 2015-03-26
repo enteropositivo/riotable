@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+   <head>
+
+      <link rel="stylesheet" href="bootstrap.min.css">
+
+      <script src="https://cdn.jsdelivr.net/g/riot@2.0.12(riot.min.js)"></script>
+      <script src="rtable.js" ></script>
+
+   <head>
+
+  <body style="padding:50px">
+    
+
+
+    <h3>RioTable demo</h3>
+    <!-- Config of rtable, no need to specify any <td></td> because rtable does the magic with JSON-->
+    <rtable ongetdata="getJSON" id="myrtable" class="table">
+      <rcol name="id" width="20px">  <b>{id}</b> </rcol>
+      <rcol name="city"/> <a href="details/?city={id}">{city}</a> </rcol>
+      <rcol name="flag"/> <img src="img/{flag}" /> </rcol>
+    </rtable> 
+
+
+    
+    <button onclick="addNewData()">Load table with new data</button>
+
+
+    <button onclick="addNewRow()">Append only new row</button>
+
+    <button onclick="restoreJSON()">Restore original data</button>
+
+
+    <script>
+
+        function getJSON(){
+        //- Load sample data when rtable mounts , we could call $.ajax(...) to load data from server
+              return [
+                     {id:101, city:'New York', flag:'us.png'},
+                     {id:202, city:'Berlin', flag:'de.png'},
+                     {id:205, city:'Madrid', flag:'es.png'}
+                     ]
+            }
+
+        function addNewData(){
+            //- reference to the new HTML element rtable, so we can use standar JavaScript
+            var mytable = document.getElementById('myrtable');
+
+            var newdata= [
+                     {id:905, city:'California', flag:'us.png'},
+                     {id:906, city:'Paris', flag:'fr.png'}
+                     ]
+            //- we call a function defined in our rtable.tag component
+            mytable.load( newdata );
+        } 
+
+        function addNewRow(){
+            //- reference to the new HTML element rtable, so we can use standar JavaScript
+            var mytable = document.getElementById('myrtable');
+
+            //- we call a function defined in our rtable.tag component
+            mytable.append( {id:'Hi', city:'I am a new row', flag:'tongue.png'} );
+        }   
+
+        function restoreJSON(){
+          var mytable = document.getElementById('myrtable');
+           mytable.load( getJSON() );
+        }
+
+
+      riot.mount('rcol');
+        riot.mount('rtable');
+
+    </script>
+  </body>
+
+
+</html>
