@@ -2,7 +2,7 @@
 
 RioTable (Riot+Table) Is a flexible HTML component to generate tables with [riot.js  lib](https://github.com/muut/riotjs) from a JSON source
 
-> (sources and samples very soon) !!!
+> [Launch RioTable Demo ...](http://enteropositivo.github.io/riotable/demo/)
 
 ![](img/rtable2.png)
 
