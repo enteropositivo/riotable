@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="RioTable : A new HTML tag you can use to render html tables from a JSON data, using Riot.js library">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>RioTable</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/enteropositivo/riotable">View on GitHub</a>
+
+          <h1 id="project_title">RioTable</h1>
+          <h2 id="project_tagline">A new HTML tag you can use to render html tables from a JSON data, using Riot.js library</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/enteropositivo/riotable/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/enteropositivo/riotable/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="riotable" class="anchor" href="#riotable" aria-hidden="true"><span class="octicon octicon-link"></span></a>RioTable</h1>
+
+<p>RioTable (Riot+Table) Is a flexible HTML component to generate tables with <a href="https://github.com/muut/riotjs">riot.js  lib</a> from a JSON source</p>
+
+<blockquote>
+<p>(sources and samples very soon) !!!</p>
+</blockquote>
+
+<p><img src="img/rtable2.png" alt=""></p>
+
+<p>You can use this *<em>HTML tag *</em>in your common  html files</p>
+
+<h3>
+<a id="the-simplest-sample" class="anchor" href="#the-simplest-sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>The simplest sample</h3>
+
+<div class="highlight highlight-html"><pre>    &lt;<span class="pl-ent">rtable</span> <span class="pl-e">ongetdata</span>=<span class="pl-s"><span class="pl-pds">"</span>getJSON<span class="pl-pds">"</span></span>&gt;
+    &lt;/<span class="pl-ent">rtable</span>&gt;</pre></div>
+
+<p>This is a simple definition of one table that renders <strong>all</strong>  JSON data returned by the callback function getJSON.  Of course we can retrieve JSON data from an AJAX method</p>
+
+<div class="highlight highlight-javascript"><pre>    <span class="pl-k">function</span> <span class="pl-en">getJSON</span>(){
+      <span class="pl-k">return</span> [
+             {id<span class="pl-k">:</span><span class="pl-c1">101</span>, city<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>New York<span class="pl-pds">'</span></span>, flag<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>ny.png<span class="pl-pds">'</span></span>},
+             {id<span class="pl-k">:</span><span class="pl-c1">202</span>, city<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>Berlin<span class="pl-pds">'</span></span>, flag<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>be.png<span class="pl-pds">'</span></span>},
+             {id<span class="pl-k">:</span><span class="pl-c1">205</span>, city<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>Madrid<span class="pl-pds">'</span></span>, flag<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>md.png<span class="pl-pds">'</span></span>}
+             ]
+    }</pre></div>
+
+<p><strong>Result:</strong></p>
+
+<p><img src="img/rtable1.png" alt=""></p>
+
+<h3>
+<a id="the-columns" class="anchor" href="#the-columns" aria-hidden="true"><span class="octicon octicon-link"></span></a>The columns</h3>
+
+<p>We can specify which columns to render from JSON data  </p>
+
+<div class="highlight highlight-html"><pre>    &lt;<span class="pl-ent">rtable</span> <span class="pl-e">ongetdata</span>=<span class="pl-s"><span class="pl-pds">"</span>getJSON<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">rcol</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>/&gt;
+      &lt;<span class="pl-ent">rcol</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>city<span class="pl-pds">"</span></span>/&gt;
+    &lt;/<span class="pl-ent">rtable</span>&gt;   </pre></div>
+
+<p><strong>Result:</strong></p>
+
+<p><img src="img/rtable3.png" alt=""></p>
+
+<h3>
+<a id="some-basic-options" class="anchor" href="#some-basic-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some basic options</h3>
+
+<p>Setting an id or a CSS class (for example to render table as BootStrap table),  and the width of any column is so simple:</p>
+
+<div class="highlight highlight-html"><pre>    &lt;<span class="pl-ent">rtable</span> <span class="pl-e">ongetdata</span>=<span class="pl-s"><span class="pl-pds">"</span>getJSON<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>myrtable<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>table<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">rcol</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>20px<span class="pl-pds">"</span></span>/&gt;
+      &lt;<span class="pl-ent">rcol</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>city<span class="pl-pds">"</span></span>/&gt;
+    &lt;/<span class="pl-ent">rtable</span>&gt;   </pre></div>
+
+<h3>
+<a id="formating-data" class="anchor" href="#formating-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formating data</h3>
+
+<p>It's very common to include our custom HTML tags inside our rendered cell like bold text, links, images, html snippets ...</p>
+
+<p>As easy as:</p>
+
+<div class="highlight highlight-html"><pre>    &lt;<span class="pl-ent">rtable</span> <span class="pl-e">ongetdata</span>=<span class="pl-s"><span class="pl-pds">"</span>getJSON<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>myrtable<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>table<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">rcol</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>20px<span class="pl-pds">"</span></span>&gt;  &lt;<span class="pl-ent">b</span>&gt;{id}&lt;/<span class="pl-ent">b</span>&gt; &lt;/<span class="pl-ent">rcol</span>&gt;
+      &lt;<span class="pl-ent">rcol</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>city<span class="pl-pds">"</span></span>/&gt; &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>details/?city={id}<span class="pl-pds">"</span></span>&gt;{city}&lt;/<span class="pl-ent">a</span>&gt; &lt;/<span class="pl-ent">rcol</span>&gt;
+      &lt;<span class="pl-ent">rcol</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>flag<span class="pl-pds">"</span></span>/&gt; &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>img/{flag}<span class="pl-pds">"</span></span> /&gt; &lt;/<span class="pl-ent">rcol</span>&gt;
+    &lt;/<span class="pl-ent">rtable</span>&gt;   </pre></div>
+
+<p><strong>Result:</strong></p>
+
+<p><img src="img/rtable2.png" alt=""></p>
+
+<h3>
+<a id="calling-riotable-methods" class="anchor" href="#calling-riotable-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Calling RioTable Methods</h3>
+
+<p>For example we can add new data to our table when a button is clicked. </p>
+
+<div class="highlight highlight-html"><pre>    &lt;<span class="pl-ent">button</span> <span class="pl-e">onclick</span>=<span class="pl-s"><span class="pl-pds">"</span>addNewData()<span class="pl-pds">"</span></span>&gt;Change Table&lt;/<span class="pl-ent">button</span>&gt;
+
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">        <span class="pl-k">function</span> <span class="pl-en">addNewData</span>(){</span>
+<span class="pl-s1">            <span class="pl-k">var</span> mytable <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>myrtable<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">            mytable.Load( [{id<span class="pl-k">:</span><span class="pl-c1">255</span>, city<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>Paris<span class="pl-pds">'</span></span>, flag<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>pa.png<span class="pl-pds">'</span></span>}] );</span>
+<span class="pl-s1">        }</span>
+<span class="pl-s1">    &lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">RioTable maintained by <a href="https://github.com/enteropositivo">enteropositivo</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
