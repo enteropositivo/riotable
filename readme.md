@@ -7,13 +7,12 @@ RioTable (Riot+Table) Is a flexible HTML component to generate tables with [riot
 ![](img/rtable2.png)
 
 
-You can use this **HTML tag **in your common  html files
+You can use this **HTML tag** in your common  html files
 
 ### The simplest sample ###
 
 ```html
-    <rtable ongetdata="getJSON">
-    </rtable>
+    <rtable ongetdata="getJSON"></rtable>
 ```
 
 
